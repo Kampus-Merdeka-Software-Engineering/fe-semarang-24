@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/tablet.css" />
+    <link rel="stylesheet" href="../css/Mobile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="heading">
+        <img src="../Pages/foto/logo.png" alt="Logo" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+      </ul>
+      <a href="javascript:void(0);" class="icon" onclick="navBar()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <div class="body-parent">
+      <div class="banner">
+        <img src="foto/home.jpg" alt="banner" class="banner-img" />
+        <div class="banner-teks">
+          <p>Services</p>
+          <h2>Perusahaan Shipping</h2>
+        </div>
+      </div>
+
+      <div class="accordion-container">
+        <div class="accordion">
+          <div class="accordion-header">Cek Resi</div>
+          <div class="accordion-content">
+            <div class="form-container">
+              <form>
+                <div class="tracking">
+                  <!--<h2 class="track-title">Track Your Package</h2>-->
+                  <div class="form-tracking">
+                    <form>
+                      <input
+                        type="text"
+                        id="resi"
+                        nama="resi"
+                        placeholder="Check Your Resi"
+                        required
+                      />
+                    </form>
+                  </div>
+                  <div class="button-center">
+                    <button class="button-track">Track</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">Kirim Paket</div>
+          <div class="accordion-content">
+            <div class="form-container">
+              <form>
+                <div class="form-tracking">
+                  <form id="formSend">
+                    <label for="nameSender"
+                      ><i class="fa fa-user"></i> Name Sender</label
+                    >
+                    <br />
+                    <input
+                      type="text"
+                      id="nameSender"
+                      name="nameSender"
+                      placeholder="Enter Your Fullname"
+                      required
+                    />
+                    <br />
+                    <label for="nameRecipient"
+                      ><i class="fa fa-user"></i> Name Recipient</label
+                    >
+                    <br />
+                    <input
+                      type="text"
+                      id="nameRecipient"
+                      name="nameRecipient"
+                      placeholder="Enter Your Fullname"
+                      required
+                    />
+                    <br />
+
+                    <label for="email"
+                      ><i class="fa fa-envelope"></i> Email</label
+                    >
+                    <br />
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="Enter Your Email"
+                      required
+                    />
+                    <br />
+
+                    <label for="adr"
+                      ><i class="fa fa-address-card-o"></i> Address</label
+                    >
+                    <br />
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      placeholder="Enter Your Address"
+                      required
+                    />
+                    <br />
+
+                    <label for="cityFrom"
+                      ><i class="fa fa-institution"></i> Kota Asal</label
+                    >
+                    <br />
+                    <input
+                      type="text"
+                      id="cityFrom"
+                      name="cityFrom"
+                      placeholder="Enter Your City From"
+                      required
+                    />
+                    <br />
+
+                    <label for="cityTo"
+                      ><i class="fa fa-briefcase"></i> Kota Tujuan</label
+                    >
+                    <br />
+                    <input
+                      type="text"
+                      id="cityTo"
+                      name="cityTo"
+                      placeholder="Enter Your City To"
+                      required
+                    />
+                    <br />
+
+                    <label for="packageService"
+                      ><i class="fa fa-balance-scale"></i> Package
+                      Service</label
+                    >
+                    <br />
+                    <select name="packageService" id="packageService">
+                      <option value="">Select Your Package Service</option>
+                      <option value="Regular">Regular</option>
+                      <option value="Kilat">Kilat</option>
+                    </select>
+                    <!-- <input
+                      type="text"
+                      id="packageService"
+                      name="packageService"
+                      placeholder="Enter Your Package Regular or Kilat"
+                      required
+                    /> -->
+                    <br />
+
+                    <label for="weight"
+                      ><i class="fa fa-balance-scale"></i> Item Weight</label
+                    >
+                    <br />
+                    <input
+                      type="text"
+                      id="weight"
+                      name="weight"
+                      placeholder="Enter Your Item Weight"
+                      required
+                    />
+                  </form>
+                  <div class="button-center">
+                    <button class="button-track" id="btnSend">Send</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result_package">
+        <div id="noResi"></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-teks"></div>
+    </footer>
+    <script src="../Js/logicDisplay.js"></script>
+    <script src="../Js/logicForm.js"></script>
+  </body>
+</html>
