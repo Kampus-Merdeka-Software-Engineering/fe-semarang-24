@@ -1,5 +1,57 @@
 //Validation Form
-document.querySelector("#btnSend").onclick = Validation = (event) => {
+const baseUrl = "http://localhost:3000/";
+let formCustomer = document.getElementById("formSend");
+let formTrack = document.getElementById("formTrack");
+
+// console.log(formCustomer);
+//Post Database
+formCustomer.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const noResiValue = Math.floor(Math.random() * 100000000000);
+  const nameSenderValue = document.querySelector("#nameSender").value;
+  const nameRecipientValue = document.querySelector("#nameRecipient").value;
+  const emailValue = document.querySelector("#email").value;
+  const addressValue = document.querySelector("#address").value;
+  const cityFromValue = document.querySelector("#cityFrom").value;
+  const cityToValue = document.querySelector("#cityTo").value;
+  const packageServiceValue = document.querySelector("#packageService").value;
+  const weightValue = parseFloat(document.querySelector("#weight").value);
+  const totalPrice = calculateTotalPrice(packageServiceValue, weightValue);
+
+  fetch(`${baseUrl}packages`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      idreceipt: noResiValue,
+      namesender: nameSenderValue,
+      namerecipient: nameRecipientValue,
+      email: emailValue,
+      address: addressValue,
+      cityfrom: cityFromValue,
+      cityto: cityToValue,
+      packageservice: packageServiceValue,
+      itemweight: weightValue,
+      totalprice: totalPrice,
+    }),
+  })
+    .then((res) => {
+      if (res.ok) {
+        alert("Add Customer successfully");
+      } else {
+        alert("Add Customer Not successfully");
+      }
+      console.log(res);
+    })
+    .catch((error) => {
+      alert(`Error Massage: ${error.message}`);
+    });
+});
+
+// For Display
+formCustomer.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const noResiValue = Math.floor(Math.random() * 100000000000);
@@ -103,21 +155,66 @@ document.querySelector("#btnSend").onclick = Validation = (event) => {
   document.querySelector("#cityTo").value = "";
   document.querySelector("#packageService").value = "";
   document.querySelector("#weight").value = "";
-};
+});
 
-//Check Resi
-document.querySelector(".button-track").onclick = checkResi = (event) => {
-  event.preventDefault();
+// // //Check Resi
+// formTrack.addEventListener("submit", (event) => {
+//   event.preventDefault();
 
-  const resiTrack = document.querySelector("#resi").value;
+//   const noResiValue = Math.floor(Math.random() * 100000000000);
+//   const nameSenderValue = document.querySelector("#nameSender").value;
+//   const nameRecipientValue = document.querySelector("#nameRecipient").value;
+//   const emailValue = document.querySelector("#email").value;
+//   const addressValue = document.querySelector("#address").value;
+//   const cityFromValue = document.querySelector("#cityFrom").value;
+//   const cityToValue = document.querySelector("#cityTo").value;
+//   const packageServiceValue = document.querySelector("#packageService").value;
+//   const weightValue = parseFloat(document.querySelector("#weight").value);
+//   const totalPrice = calculateTotalPrice(packageServiceValue, weightValue);
 
-  if (!resiTrack) {
-    alert("Please fill in all fields correctly before sending.");
-    return;
-  }
-};
+//   fetch(`${baseUrl}packages`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       idreceipt: noResiValue,
+//       namesender: nameSenderValue,
+//       namerecipient: nameRecipientValue,
+//       email: emailValue,
+//       address: addressValue,
+//       cityfrom: cityFromValue,
+//       cityto: cityToValue,
+//       packageservice: packageServiceValue,
+//       itemweight: weightValue,
+//       totalprice: totalPrice,
+//     }),
+//   })
+//     .then((res) => {
+//       if (res.ok) {
+//         alert("Add Customer successfully");
+//       } else {
+//         alert("Add Customer Not successfully");
+//       }
+//       console.log(res);
+//     })
+//     .catch((error) => {
+//       alert(`Error Massage: ${error.message}`);
+//     });
+// });
 
-//Logic Price Per Kilogram
+// document.querySelector(".button-track").onclick = checkResi = (event) => {
+//   event.preventDefault();
+
+//   const resiTrack = document.querySelector("#resi").value;
+
+//   if (!resiTrack) {
+//     alert("Please fill in all fields correctly before sending.");
+//     return;
+//   }
+// };
+
+// //Logic Price Per Kilogram
 function calculateTotalPrice(packageService, weight) {
   // Define prices for Regular and Kilat packages
   const regularPricePerKg = 10000;

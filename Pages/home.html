@@ -46,22 +46,26 @@
           <div class="accordion-header">Cek Resi</div>
           <div class="accordion-content">
             <div class="form-container">
-              <form>
+              <form id="formTrack">
                 <div class="tracking">
                   <!--<h2 class="track-title">Track Your Package</h2>-->
                   <div class="form-tracking">
-                    <form>
-                      <input
-                        type="text"
-                        id="resi"
-                        nama="resi"
-                        placeholder="Check Your Resi"
-                        required
-                      />
-                    </form>
+                    <input
+                      type="text"
+                      id="resi"
+                      nama="resi"
+                      placeholder="Check Your Resi"
+                      required
+                    />
                   </div>
                   <div class="button-center">
-                    <button class="button-track">Track</button>
+                    <input
+                      type="submit"
+                      name="submit"
+                      class="button-track"
+                      id="btnTrack"
+                    />
+                    <!-- <button class="button-track">Track</button> -->
                   </div>
                 </div>
               </form>
@@ -73,129 +77,132 @@
           <div class="accordion-header">Kirim Paket</div>
           <div class="accordion-content">
             <div class="form-container">
-              <form>
-                <div class="form-tracking">
-                  <form id="formSend">
-                    <label for="nameSender"
-                      ><i class="fa fa-user"></i> Name Sender</label
-                    >
-                    <br />
-                    <input
-                      type="text"
-                      id="nameSender"
-                      name="nameSender"
-                      placeholder="Enter Your Fullname"
-                      required
-                    />
-                    <br />
-                    <label for="nameRecipient"
-                      ><i class="fa fa-user"></i> Name Recipient</label
-                    >
-                    <br />
-                    <input
-                      type="text"
-                      id="nameRecipient"
-                      name="nameRecipient"
-                      placeholder="Enter Your Fullname"
-                      required
-                    />
-                    <br />
+              <div class="form-tracking">
+                <form id="formSend">
+                  <label for="nameSender"
+                    ><i class="fa fa-user"></i> Name Sender</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    id="nameSender"
+                    name="nameSender"
+                    placeholder="Enter Your Fullname"
+                    required
+                  />
+                  <br />
+                  <label for="nameRecipient"
+                    ><i class="fa fa-user"></i> Name Recipient</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    id="nameRecipient"
+                    name="nameRecipient"
+                    placeholder="Enter Your Fullname"
+                    required
+                  />
+                  <br />
 
-                    <label for="email"
-                      ><i class="fa fa-envelope"></i> Email</label
-                    >
-                    <br />
-                    <input
-                      type="text"
-                      id="email"
-                      name="email"
-                      placeholder="Enter Your Email"
-                      required
-                    />
-                    <br />
+                  <label for="email"
+                    ><i class="fa fa-envelope"></i> Email</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Your Email"
+                    required
+                  />
+                  <br />
 
-                    <label for="adr"
-                      ><i class="fa fa-address-card-o"></i> Address</label
-                    >
-                    <br />
-                    <input
-                      type="text"
-                      id="address"
-                      name="address"
-                      placeholder="Enter Your Address"
-                      required
-                    />
-                    <br />
+                  <label for="address"
+                    ><i class="fa fa-address-card-o"></i> Address</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="Enter Your Address"
+                    required
+                  />
+                  <br />
 
-                    <label for="cityFrom"
-                      ><i class="fa fa-institution"></i> Kota Asal</label
-                    >
-                    <br />
-                    <input
-                      type="text"
-                      id="cityFrom"
-                      name="cityFrom"
-                      placeholder="Enter Your City From"
-                      required
-                    />
-                    <br />
+                  <label for="cityFrom"
+                    ><i class="fa fa-institution"></i> Kota Asal</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    id="cityFrom"
+                    name="cityFrom"
+                    placeholder="Enter Your City From"
+                    required
+                  />
+                  <br />
 
-                    <label for="cityTo"
-                      ><i class="fa fa-briefcase"></i> Kota Tujuan</label
-                    >
-                    <br />
-                    <input
-                      type="text"
-                      id="cityTo"
-                      name="cityTo"
-                      placeholder="Enter Your City To"
-                      required
-                    />
-                    <br />
+                  <label for="cityTo"
+                    ><i class="fa fa-briefcase"></i> Kota Tujuan</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    id="cityTo"
+                    name="cityTo"
+                    placeholder="Enter Your City To"
+                    required
+                  />
+                  <br />
 
-                    <label for="packageService"
-                      ><i class="fa fa-balance-scale"></i> Package
-                      Service</label
-                    >
-                    <br />
-                    <select name="packageService" id="packageService">
-                      <option value="">Select Your Package Service</option>
-                      <option value="Regular">Regular</option>
-                      <option value="Kilat">Kilat</option>
-                    </select>
-                    <!-- <input
+                  <label for="packageService"
+                    ><i class="fa fa-balance-scale"></i> Package Service</label
+                  >
+                  <br />
+                  <select name="packageService" id="packageService">
+                    <option value="">Select Your Package Service</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Kilat">Kilat</option>
+                  </select>
+                  <!-- <input
                       type="text"
                       id="packageService"
                       name="packageService"
                       placeholder="Enter Your Package Regular or Kilat"
                       required
                     /> -->
-                    <br />
+                  <br />
 
-                    <label for="weight"
-                      ><i class="fa fa-balance-scale"></i> Item Weight</label
-                    >
-                    <br />
-                    <input
-                      type="text"
-                      id="weight"
-                      name="weight"
-                      placeholder="Enter Your Item Weight"
-                      required
-                    />
-                  </form>
+                  <label for="weight"
+                    ><i class="fa fa-balance-scale"></i> Item Weight</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    id="weight"
+                    name="weight"
+                    placeholder="Enter Your Item Weight"
+                    required
+                  />
                   <div class="button-center">
-                    <button class="button-track" id="btnSend">Send</button>
+                    <input
+                      type="submit"
+                      name="submit"
+                      class="button-track"
+                      id="submit"
+                    />
+                    <!-- <button>submit</button> -->
                   </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="result_package">
-        <div id="noResi"></div>
+        <!-- <div id="noResi"></div> -->
       </div>
     </div>
 
