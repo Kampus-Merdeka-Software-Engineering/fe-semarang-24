@@ -378,11 +378,11 @@
     justify-content: center;
   }
   /* result Data package */
-  .parentPackage {
+  .parentPackageDiv {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .parentPackage div {
+  .parentPackageDiv div {
     display: flex;
     justify-content: center;
     align-items: center;
