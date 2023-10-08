@@ -160,8 +160,8 @@ formTrack.addEventListener("submit", (event) => {
         totalprice,
       } = obj;
 
-      return `
-      <div>
+      return (display.innerHTML = `
+      <div class="parentPackageDiv">
           <div>
             <p>No Resi : ${idreceipt} </p>
           </div>
@@ -192,8 +192,11 @@ formTrack.addEventListener("submit", (event) => {
           <div>
             <p>Name : ${totalprice} </p>
           </div>
+          <div>
+            <button type="button" onclick="clearOutput()">Clear</button>
+          </div>
       </div>
-        `;
+        `);
     });
 
     display.innerHTML = dataDisplay;
