@@ -107,7 +107,7 @@ formCustomer.addEventListener("submit", (event) => {
         <div>
           <p>Total Price : ${submittedData.totalprice}</p>
         </div>
-        <div>
+        <div class="button-container">
           <button type="button" onclick="clearOutput()">Clear</button>
         </div>
       </div>
