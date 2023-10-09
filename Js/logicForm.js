@@ -1,10 +1,12 @@
 //Validation Form
-const baseUrl = "http://localhost:3000/";
+// const baseUrl = "http://localhost:3000/";
+const baseUrl = "https://be-semarang-24-production.up.railway.app/";
 let formCustomer = document.getElementById("formSend");
 let formTrack = document.getElementById("formTrack");
 let display = document.querySelector(".result_package");
-const urlPackage = "http://localhost:3000/packages";
-
+// const urlPackage = "http://localhost:3000/packages";
+const urlPackage = "https://be-semarang-24-production.up.railway.app/packages";
+// http://be-semarang-24-production.up.railway.app
 // console.log(formCustomer);
 
 function generateNumberResi() {
@@ -138,7 +140,6 @@ formTrack.addEventListener("submit", (event) => {
   const getDataResi = async () => {
     const res = await fetch(`${urlPackage}/${idrecipt}`);
     const data = await res.json();
-    console.log(data.result);
     return data.result;
   };
   getDataResi();
@@ -166,33 +167,33 @@ formTrack.addEventListener("submit", (event) => {
             <p>No Resi : ${idreceipt} </p>
           </div>
           <div>
-            <p>Name : ${namesender} </p>
+            <p>Name Sender : ${namesender} </p>
           </div>
           <div>
-            <p>Name : ${namerecipient} </p>
+            <p>Name Recipient : ${namerecipient} </p>
           </div>
           <div>
-            <p>Name : ${email} </p>
+            <p>Email : ${email} </p>
           </div>
           <div>
-            <p>Name : ${address} </p>
+            <p>Address : ${address} </p>
           </div>
           <div>
-            <p>Name : ${cityfrom} </p>
+            <p>City From : ${cityfrom} </p>
           </div>
           <div>
-            <p>Name : ${cityto} </p>
+            <p>City To : ${cityto} </p>
           </div>
           <div>
-            <p>Name : ${packageservice} </p>
+            <p>Package Service : ${packageservice} </p>
           </div>
           <div>
-            <p>Name : ${itemweight} </p>
+            <p>Item Weight : ${itemweight} </p>
           </div>
           <div>
-            <p>Name : ${totalprice} </p>
+            <p>Total Price : ${totalprice} </p>
           </div>
-          <div>
+          <div class="button-container">
             <button type="button" onclick="clearOutput()">Clear</button>
           </div>
       </div>
